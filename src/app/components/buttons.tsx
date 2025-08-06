@@ -1,6 +1,6 @@
 'use client'
 
-import { logout , login } from '@/app/lib/actions/auth'; // changed `login` to `logout`
+import { logout, login } from '@/app/lib/actions/auth' // changed `login` to `logout`
 
 export function SignoutBTN() {
   return (
@@ -10,15 +10,15 @@ export function SignoutBTN() {
     >
       Sign out
     </button>
-  );
+  )
 }
-export function SigninBTN() {
+export function SigninBTN({ provider }: { provider: string }) {
   return (
     <button
       className='bg-gray-800 text-white text-3xl py-10 px-15 rounded-2xl hover:bg-gray-950'
-      onClick={() => login()}
+      onClick={() => login(provider)}
     >
-      Sign in with github
+      Sign in with {provider}
     </button>
-  );
+  )
 }
