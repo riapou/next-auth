@@ -10,9 +10,6 @@ export const login = async (provider: string) => {
     case 'google':
       await signIn('google', { redirectTo: '/dashboard' })
       break
-    case 'reddit':
-      await signIn('reddit', { redirectTo: '/dashboard' })
-      break
     default:
       throw new Error(`Unsupported provider: ${provider}`)
   }
